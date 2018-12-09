@@ -1,21 +1,24 @@
 import React from "react";
 
 class RetrieveLocation extends React.Component {
-	locationRef = React.createRef();
-
+	
 	addLocation = event => {
 		event.preventDefault();
-		this.props.getWeather(this.locationRef);
-		event.currentTarget.reset();
+		this.props.updateLocation(event.currentTarget.value);
 	};
+
+	getWeather = event => {
+		event.preventDefault();
+		this.props.getWeather();
+	}
 
   render() {
     const Background = "/images/banner.png";
     return(
       <div className="hero" style={{backgroundImage: `url(${Background})`}}>
 				<div className="container">
-					<form className="find-location" onSubmit={this.addLocation}>
-						<input type="text" placeholder="Find your location..." ref={this.locationRef}/>
+					<form className="find-location" onSubmit={this.getWeather}>
+						<input type="text" name ="location" value={this.props.location} onChange={this.addLocation}/>
 						<input type="submit" value="Find"/>
 					</form>
 
