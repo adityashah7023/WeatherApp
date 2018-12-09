@@ -8,5 +8,4 @@ const app = express();
 
 app.use(cors());
 app.use(routes);
-console.log('Starting server');
 app.listen(PORT, start);

@@ -30,7 +30,6 @@ class App extends React.Component {
   }
 
   updateWeather = (res) => {
-    console.log(res);
     const weather = { ...this.state.weather };
     weather.cityName = res.name;
     weather.currentTemp = res.main.temp;
@@ -43,7 +42,6 @@ class App extends React.Component {
     weather.windSpeed = convertWindSpeed(res.wind.speed).toFixed(2);
     
     weather.windDirection = calculateWindDirection(res.wind.deg);
-    console.log(res.wind.deg +" "+weather.windDirection);
     weather.actualRes = res;
     this.setState({ weather });
   }
