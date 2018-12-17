@@ -1,6 +1,6 @@
 export const retrieveWeather = async (city, unit = 'metric') => {
   try{
-    const request = await fetch(`https://localhost:3001/weather?q=${city}&units=${unit}`);
+    const request = await fetch(`http://localhost:3001/weather?q=${city}&units=${unit}`);
     if(request.status === 200){
       const response = await request.json();
       return {
