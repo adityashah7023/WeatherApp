@@ -16,7 +16,7 @@ exports.getWeather = function (req, res) {
 
 var callWeatherApi = (path, callback) => {
   const option = {
-    uri: `http://api.openweathermap.org/data/2.5/${path}`,
+    uri: `https://api.openweathermap.org/data/2.5/${path}`,
     method: "GET",
     headers: {
       "x-api-key": "df1fa6fe2aa3f422133d569362fcce2f"
